@@ -1,6 +1,6 @@
 # websocket-chat
 
-Example of using WebSocket with a simple peer chat program.
+Example of using WebSocket to create a simple peer chat program.
 
 To use the example you must already have Node.js installed.
 
