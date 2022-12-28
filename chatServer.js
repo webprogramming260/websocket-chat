@@ -2,7 +2,7 @@ const { WebSocketServer } = require('ws');
 const express = require('express');
 const app = express();
 
-// Server up our webSocket client HTML
+// Serve up our webSocket client HTML
 app.use(express.static('./public'));
 
 server = app.listen(8080, () => {
