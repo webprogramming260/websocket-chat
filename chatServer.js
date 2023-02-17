@@ -5,8 +5,9 @@ const app = express();
 // Serve up our webSocket client HTML
 app.use(express.static('./public'));
 
-server = app.listen(8080, () => {
-  console.log(`Listening on 8080`);
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
+server = app.listen(port, () => {
+  console.log(`Listening on ${port}`);
 });
 
 // Create a websocket object
