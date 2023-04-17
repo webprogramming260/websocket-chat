@@ -1,6 +1,6 @@
 {
   "name": "websocket-chat",
-  "main": "chatServer.js",
+  "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
