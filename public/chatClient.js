@@ -28,7 +28,7 @@ function sendMessage() {
   if (!!msg) {
     appendMsg('me', 'me', msg);
     const name = document.querySelector('#my-name').value;
-    socket.send`{"name":"${name}", "msg":"${msg}"}`);
+    socket.send(JSON.stringify({"name":name, "msg":msg}));
     msgEl.value = '';
   }
 }
