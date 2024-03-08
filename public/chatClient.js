@@ -28,7 +28,7 @@ function sendMessage() {
   if (!!msg) {
     appendMsg('me', 'me', msg);
     const name = document.querySelector('#my-name').value;
-    socket.send(`{"name":"${name}", "msg":"${msg}"}`);
+    socket.send`{"name":"${name}", "msg":"${msg}"}`);
     msgEl.value = '';
   }
 }
@@ -36,9 +36,16 @@ function sendMessage() {
 // Create one long list of messages
 function appendMsg(cls, from, msg) {
   const chatText = document.querySelector('#chat-text');
-  chatText.innerHTML =
-    `<div><span class="${cls}">${from}</span>: ${msg}</div>` +
-    chatText.innerHTML;
+  const wrapper = document.createElement("div");
+  const fromEl = document.createElement("span");
+  
+  fromEl.classList.add(cls);
+  fromEl.textContent = from;
+  
+  wrapper.appendChild(fromEl);
+  wrapper.append(": "+msg);
+  
+  chatText.prepend(wrapper);
 }
 
 // Send message on enter keystroke
