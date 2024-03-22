@@ -36,9 +36,9 @@ function sendMessage() {
 // Create one long list of messages
 function appendMsg(cls, from, msg) {
   const chatText = document.querySelector('#chat-text');
-  chatText.innerHTML =
-    `<div><span class="${cls}">${from}</span>: ${msg}</div>` +
-    chatText.innerHTML;
+  const chatEl = document.createElement('div');
+  chatEl.innerHTML = `<span class="${cls}">${from}</span>: ${msg}</div>`;
+  chatText.prepend(chatEl);
 }
 
 // Send message on enter keystroke
