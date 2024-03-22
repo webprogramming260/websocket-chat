@@ -22,9 +22,10 @@ server.on('upgrade', (request, socket, head) => {
 
 // Keep track of all the connections so we can forward messages
 let connections = [];
+let id = 0;
 
 wss.on('connection', (ws) => {
-  const connection = { id: connections.length + 1, alive: true, ws: ws };
+  const connection = { id: ++id, alive: true, ws: ws };
   connections.push(connection);
 
   // Forward messages to everyone except the sender
@@ -38,12 +39,11 @@ wss.on('connection', (ws) => {
 
   // Remove the closed connection so we don't try to forward anymore
   ws.on('close', () => {
-    connections.findIndex((o, i) => {
-      if (o.id === connection.id) {
-        connections.splice(i, 1);
-        return true;
-      }
-    });
+    const pos = connections.findIndex((o, i) => o.id === connection.id);
+
+    if (pos >= 0) {
+      connections.splice(pos, 1);
+    }
   });
 
   // Respond to pong messages by marking the connection alive
