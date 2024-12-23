@@ -1,0 +1,11 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

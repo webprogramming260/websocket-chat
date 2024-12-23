@@ -19,11 +19,12 @@ printf "\n----> Deploying $service application to $hostname with $key\n"
 
 # Step 1
 printf "\n----> Build the distribution package\n"
+npm run build
 rm -rf dist
-mkdir dist
-cp -r public dist
-cp *.js dist
-cp *.json dist
+mkdir -p dist/public
+cp -r service/public dist/public
+cp service/*.js dist
+cp service/*.json dist
 
 # Step 2
 printf "\n----> Clearing out previous distribution on the target\n"

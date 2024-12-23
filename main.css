@@ -5,14 +5,14 @@ body {
 #chat-text {
   padding: 1em 0;
 }
-div .friend {
+.received {
   color: rgb(153, 87, 148);
   margin-left: 0.5em;
 }
-div .me {
+.sent {
   color: rgb(87, 153, 117);
 }
-div .system {
+.system {
   color: rgb(225, 103, 10);
 }
 .name {

@@ -1,9 +1,15 @@
 {
-  "name": "websocket-chat",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "chat",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --outDir service/public"
+  },
+  "devDependencies": {
+    "vite": "^6.0.5"
+  },
   "dependencies": {
-    "express": "^4.18.2",
-    "ws": "^8.11.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
